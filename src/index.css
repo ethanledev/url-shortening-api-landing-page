@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+a:link,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: var(--gray);
+}
+
 body {
   margin: 0;
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -18,6 +25,15 @@ code {
 
 html {
   font-size: 62.5%;
+}
+
+.srOnly {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  clip: rect(1px 1px 1px 1px);
+  position: absolute;
 }
 
 :root {
