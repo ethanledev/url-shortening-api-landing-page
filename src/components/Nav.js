@@ -1,6 +1,6 @@
-import styles from "./NavBar.module.css";
+import styles from "./Nav.module.css";
 
-const NavBar = ({ device, hideMenu }) => {
+const Nav = ({ device }) => {
   return (
     <div className={styles[device]}>
       <nav className={styles.nav}>
@@ -18,4 +18,4 @@ const NavBar = ({ device, hideMenu }) => {
   );
 };
 
-export default NavBar;
+export default Nav;

@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./App.module.css";
 import Header from "./Header";
 import Nav from "./Nav";
+import Shortener from "./Shortener";
 
 const App = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -23,7 +24,10 @@ const App = () => {
             <a href="/">Get Started</a>
           </article>
         </section>
-        <section>
+        <section className={styles.mainSection}>
+          <div className={styles.shortenerContainer}>
+            <Shortener />
+          </div>
           <h2>Advanced Statistics</h2>
         </section>
       </main>
