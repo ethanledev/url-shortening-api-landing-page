@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./App.module.css";
 import Header from "./Header";
-import NavBar from "./NavBar";
+import Nav from "./Nav";
 
 const App = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -9,13 +9,19 @@ const App = () => {
   return (
     <div className={styles.container}>
       <Header toggleMenu={() => setShowMenu(!showMenu)} />
-      {showMenu && (
-        <NavBar device="mobile" hideMenu={() => setShowMenu(false)} />
-      )}
+      {showMenu && <Nav device="mobile" hideMenu={() => setShowMenu(false)} />}
       <main className={styles.main}>
         <h1 className="srOnly">Shortly landing page</h1>
-        <section>
+        <section className={styles.headerSection}>
           <h2 className="srOnly">URL shortening</h2>
+          <article>
+            <h3>More than just shorter links</h3>
+            <p>
+              Build your brand's recognition and get detailed insights on how
+              your links are performing.
+            </p>
+            <a href="/">Get Started</a>
+          </article>
         </section>
         <section>
           <h2>Advanced Statistics</h2>

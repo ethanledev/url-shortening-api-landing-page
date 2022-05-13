@@ -1,16 +1,113 @@
 .main {
-  padding: 0 10rem;
+  position: relative;
 }
 
-@media only screen and (max-width: 1024px) {
-  .main {
-    padding: 0 5rem;
+.headerSection {
+  padding: 3rem 10rem 0 10rem;
+  background-image: url("../images/illustration-working.svg");
+  min-height: 48rem;
+  background-repeat: no-repeat;
+  background-position: bottom 0 right -11rem;
+}
+
+.headerSection a {
+  margin-right: 0;
+  color: white;
+  background-color: var(--cyan);
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+  font-size: 1.4rem;
+  display: inline-block;
+}
+
+.headerSection a:hover {
+  opacity: 0.5;
+}
+
+.headerSection h3 {
+  margin: 0;
+  font-size: 5.6rem;
+  line-height: 1.2;
+  width: 50%;
+}
+
+.headerSection p {
+  font-size: 1.8rem;
+  line-height: 2;
+  color: var(--gray);
+  margin: 0 0 3rem 0;
+  width: 40%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .headerSection h3 {
+    width: 60%;
   }
 }
 
-@media only screen and (max-width: 630px) {
-  .main {
-    position: relative;
+@media only screen and (max-width: 1024px) {
+  .headerSection {
+    padding: 3rem 5rem 0 5rem;
+    background-position: bottom 0 right -25rem;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .headerSection {
+    padding: 50rem 2rem 0 2rem;
+    background-position: top 0 left 2rem;
+  }
+
+  .headerSection article {
+    text-align: center;
+  }
+
+  .headerSection h3 {
+    width: auto;
+    padding: 0 6%;
+  }
+
+  .headerSection p {
+    width: auto;
+    padding: 0 15%;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .headerSection {
+    background-size: auto 40rem;
+    padding: 42rem 2rem 0 2rem;
+  }
+
+  .headerSection h3 {
+    width: auto;
     padding: 0 2rem;
+    font-size: 4.8rem;
+  }
+
+  .headerSection p {
+    width: auto;
+    padding: 0 2rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .headerSection {
+    background-size: auto 30rem;
+    padding: 32rem 2rem 0 2rem;
+    background-position: top 0 left 1rem;
+  }
+
+  .headerSection h3 {
+    width: auto;
+    padding: 0 2rem;
+    font-size: 4rem;
+  }
+
+  .headerSection p {
+    width: auto;
+    padding: 0 1rem;
+    font-size: 1.4rem;
   }
 }
