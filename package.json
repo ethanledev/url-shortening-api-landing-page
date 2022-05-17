@@ -13,6 +13,8 @@
   },
   "homepage": "https://hieuhmle.github.io/url-shortening-api-landing-page",
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

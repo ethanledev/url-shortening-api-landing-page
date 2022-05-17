@@ -9,7 +9,7 @@ import StatisticsInfo from "./StatisticsInfo";
 const App = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [recentLinks, setRecentLinks] = useState([]);
-  const [copyIndex, setCopyIndex] = useState(1);
+  const [copyIndex, setCopyIndex] = useState(-1);
 
   const addRecentLink = (newLink) => {
     if (recentLinks.length < 3) {
