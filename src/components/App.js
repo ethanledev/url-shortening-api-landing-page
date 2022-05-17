@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./App.module.css";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -8,31 +8,58 @@ import StatisticsInfo from "./StatisticsInfo";
 
 const App = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [recentLinks, setRecentLinks] = useState([]);
+  const [copyIndex, setCopyIndex] = useState(1);
+
+  const addRecentLink = (newLink) => {
+    if (recentLinks.length < 3) {
+      recentLinks.unshift(newLink);
+    } else {
+      recentLinks.pop();
+      recentLinks.unshift(newLink);
+    }
+    setRecentLinks([...recentLinks]);
+    localStorage.setItem("recentLinks", JSON.stringify(recentLinks));
+  };
+
+  const handleCopy = (index) => {
+    navigator.clipboard.writeText(recentLinks[index].short);
+    setCopyIndex(index);
+    setTimeout(() => setCopyIndex(-1), 500);
+  };
 
   const renderRecentLinks = () => {
-    const links = [];
-    for (let i = 0; i < 3; i++) {
-      links.push(
-        <div key={i} className={styles.recentLink}>
-          <a
-            href="https://github.com/hieuhmle/"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.fullLink}
-          >
-            https://github.com/hieuhmle/
+    return recentLinks.map((link, index) => (
+      <div key={link.short + index} className={styles.recentLink}>
+        <a
+          href={link.original}
+          target="_blank"
+          rel="noreferrer"
+          className={styles.fullLink}
+        >
+          {link.original}
+        </a>
+        <div className={styles.shortenedLink}>
+          <a href={link.fullShort} target="_blank" rel="noreferrer">
+            {link.short}
           </a>
-          <div className={styles.shortenedLink}>
-            <a href="https://shrtco.de/B27Cjl" target="_blank" rel="noreferrer">
-              shrtco.de/B27Cjl
-            </a>
-            <button>Copy</button>
-          </div>
+          <button
+            disabled={copyIndex === index}
+            onClick={() => handleCopy(index)}
+          >
+            {copyIndex === index ? "Copied!" : "Copy"}
+          </button>
         </div>
-      );
-    }
-    return links;
+      </div>
+    ));
   };
+
+  useEffect(() => {
+    const localStorageData = JSON.parse(localStorage.getItem("recentLinks"));
+    if (localStorageData) {
+      setRecentLinks(localStorageData);
+    }
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -54,7 +81,7 @@ const App = () => {
         <section className={styles.mainSection}>
           <h2 className="srOnly">Main Section</h2>
           <article>
-            <Shortener />
+            <Shortener addRecentLink={addRecentLink} />
             {renderRecentLinks()}
             <h3>Advanced Statistics</h3>
             <p>
