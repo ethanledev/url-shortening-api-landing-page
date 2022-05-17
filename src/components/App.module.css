@@ -1,3 +1,7 @@
+.fullLink {
+  color: var(--very-dark-blue) !important;
+}
+
 .main {
   position: relative;
 }
@@ -22,7 +26,7 @@
 }
 
 .headerSection a:hover {
-  opacity: 0.5;
+  background-color: var(--cyan-hover);
 }
 
 .headerSection article {
@@ -52,14 +56,70 @@
   background-color: var(--main-section-bg);
 }
 
-.shortenerContainer {
+.mainSection article {
   transform: translateY(-6.75rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainSection h3 {
+  font-size: 3.2rem;
+  margin: 5rem 0 0 0;
+}
+
+.mainSection p {
+  font-size: 1.6rem;
+  color: var(--grayish-violet);
+  width: 51rem;
+  text-align: center;
+}
+
+.recentLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  border-radius: 0.6rem;
+  width: 100%;
+}
+
+.shortenedLink a {
+  color: var(--cyan);
+  margin-right: 2rem;
+}
+
+.shortenedLink button {
+  border: none;
+  background-color: var(--cyan);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.shortenedLink button:hover {
+  background-color: var(--cyan-hover);
+}
+
+.shortenedLink button:disabled {
+  background-color: var(--dark-violet);
+  cursor: auto;
 }
 
 @media only screen and (max-width: 1024px) {
   .headerSection {
     padding: 0 5rem;
     background-position: top 0 right -20rem;
+  }
+
+  .mainSection {
+    padding: 0 5rem;
   }
 }
 
@@ -90,11 +150,38 @@
     width: auto;
     padding: 0 15%;
   }
+
+  .mainSection {
+    padding: 0 2rem;
+  }
 }
 
 @media only screen and (max-width: 630px) {
+  .fullLink {
+    padding: 1.5rem 2rem;
+    border-bottom: 0.1rem solid var(--gray);
+    width: 100%;
+  }
+
   .headerSection {
     background-position: top 0 left 2rem;
+  }
+
+  .recentLink {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .shortenedLink {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.5rem 2rem;
+  }
+
+  .shortenedLink a {
+    margin-bottom: 1.5rem;
   }
 }
 

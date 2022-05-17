@@ -8,7 +8,7 @@
 
 .authLinks a:last-child:hover {
   color: white;
-  opacity: 0.5;
+  background-color: var(--cyan-hover);
 }
 
 .desktop {
