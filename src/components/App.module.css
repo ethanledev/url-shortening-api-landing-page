@@ -1,3 +1,38 @@
+.boostLink {
+  background-image: url("../images/bg-boost-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  background-color: var(--dark-violet);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.boostLink a,
+.headerSection a {
+  color: white;
+  background-color: var(--cyan);
+  padding: 1rem 2.5rem;
+  border-radius: 2rem;
+  font-size: 1.4rem;
+  width: fit-content;
+}
+
+.boostLink a:hover,
+.headerSection a:hover {
+  background-color: var(--cyan-hover);
+}
+
+.boostLink h2 {
+  font-size: 3.2rem;
+  color: white;
+}
+
 .fullLink {
   color: var(--very-dark-blue) !important;
 }
@@ -14,19 +49,6 @@
   background-position: top 0 right -11rem;
   background-size: auto 40rem;
   display: flex;
-}
-
-.headerSection a {
-  color: white;
-  background-color: var(--cyan);
-  padding: 1rem 2.5rem;
-  border-radius: 2rem;
-  font-size: 1.4rem;
-  width: fit-content;
-}
-
-.headerSection a:hover {
-  background-color: var(--cyan-hover);
 }
 
 .headerSection article {
@@ -186,6 +208,10 @@
 }
 
 @media only screen and (max-width: 520px) {
+  .boostLink {
+    background-image: url("../images/bg-boost-mobile.svg");
+  }
+
   .headerSection {
     background-size: auto 40rem;
     padding: 42rem 2rem 0 2rem;
@@ -201,6 +227,10 @@
     width: auto;
     padding: 0 2rem;
     font-size: 1.6rem;
+  }
+
+  .mainSection p {
+    width: 100%;
   }
 }
 
@@ -221,5 +251,9 @@
     width: auto;
     padding: 0 1rem;
     font-size: 1.4rem;
+  }
+
+  .mainSection h3 {
+    font-size: 2.5rem;
   }
 }

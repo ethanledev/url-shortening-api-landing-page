@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./App.module.css";
+import Footer from "./Footer";
 import Header from "./Header";
 import Nav from "./Nav";
 import Shortener from "./Shortener";
@@ -63,6 +64,11 @@ const App = () => {
             <StatisticsInfo />
           </article>
         </section>
+        <div className={styles.boostLink}>
+          <h2>Boost your links today</h2>
+          <a href="/">Get started</a>
+        </div>
+        <Footer />
       </main>
     </div>
   );
