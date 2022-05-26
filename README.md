@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github Repo](https://github.com/hieuhmle/url-shortening-api-landing-page)
-- Live Site URL: [Live site](https://hieuhmle.github.io/url-shortening-api-landing-page)
+- Solution URL: [Github Repo](https://github.com/hieulecoder/url-shortening-api-landing-page)
+- Live Site URL: [Live site](https://hieulecoder.github.io/url-shortening-api-landing-page)
 
 ## My process
 
